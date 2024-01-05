@@ -8,6 +8,7 @@ const Question = require('./models/quizSchema');
 const Marks = require('./models/marksSchema');
 const path = require('path');
 const hbs = require('hbs');
+const MongoStore = require('connect-mongo');
 const port = process.env.PORT || 4000;
 connectdb();
 // Register the json helper
@@ -21,10 +22,19 @@ app.set("view engine", "hbs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // Set up the session middleware
-app.use(session({
+/*app.use(session({
   secret: 'secret_key',
   resave: false,
   saveUninitialized: false,
+}));*/
+app.use(session({
+  secret: 'your_secret_key',
+  resave: false,
+  saveUninitialized: true,
+  store: MongoStore.create({ 
+      mongoUrl: 'mongodb+srv://priyadarshanghoshhazra908:jwORNeNREfG7nR90@cluster0.xf1je9v.mongodb.net/?retryWrites=true&w=majority',
+      ttl: 14 * 24 * 60 * 60 // Session TTL in seconds (optional)
+  })
 }));
 
 //creating logout
