@@ -1,5 +1,48 @@
-Set up the project by following these steps:
-1) Clone the repo.
-2) Delete package-lock.json.
-3) Run npm install command.
-4) Run the project by command-node expressfiles/src/app.js.
+
+
+# Emitrr Assignment
+It is a interactive quiz app.
+
+
+
+
+
+
+
+## Authors
+
+- [@Priyadarshan](https://www.github.com/https://github.com/Priyadarshan-coder)
+
+
+
+
+
+
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://https://github.com/Priyadarshan-coder/Emitrr
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
