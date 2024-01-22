@@ -31,8 +31,10 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd Personalised Assessment Dashboard
+
 ```
+Delete package-lock.json file
 
 Install dependencies
 
@@ -43,6 +45,9 @@ Install dependencies
 Start the server
 
 ```bash
-  npm run start
+  cd expressfiles
+  cd src
+  node app.js
 ```
 
+After that please create students account with different email-id and while doing it please select the category to student and class as 5 (Since only data for class 5 are stored as of now).

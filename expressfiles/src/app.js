@@ -6,6 +6,7 @@ const connectdb=require("./db/conn");
 const Registration=require("./models/schema.js")
 const Question = require('./models/quizSchema');
 const Marks = require('./models/marksSchema');
+const Leader=require('./models/leaderboardSchema.js');
 const path = require('path');
 const hbs = require('hbs');
 const MongoStore = require('connect-mongo');
@@ -49,6 +50,19 @@ app.get('/logout', (req, res) => {
   });
 });
 //creating routes
+app.get("/leaderboard",async(req,res)=>{
+
+  //Fetch all the data of students from highest to lowest scores
+  try{
+  const resultArray = await Marks.find({}, { _id: 0, name: 1, classname: 1, score: 1 }).sort({ score: -1 }).lean();
+  res.render("studentleaderboard.hbs",{resultArray});
+  }
+  catch(error){
+    console.error('Error fetching data:', error);
+    res.status(500).send('Internal Server Error');
+  }
+  });
+  
 app.get("/", (req, res) => {
     res.render("register");
 });
@@ -83,7 +97,7 @@ catch (error) {
   console.error('Error fetching data:', error);
   res.status(500).send('Internal Server Error');
 }
-})
+});
 app.get("/result",async(req,res)=>{
   try {
     // Fetch data from the MongoDB collection
