@@ -302,7 +302,7 @@ console.log(req.body);
 console.log(totalQuestions);
 console.log(name);
     // Loop through each question and save it to the database
-    for (let questionCount = 1; questionCount <= 10; questionCount++) {
+    for (let questionCount = 1; questionCount <= 22; questionCount++) {
       const questionData = {
         question: req.body[`question_${questionCount}`],
         correctAnswer: parseInt(req.body[`answer_${questionCount}`]),
