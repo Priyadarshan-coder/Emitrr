@@ -51,3 +51,4 @@ Start the server
 ```
 
 After that please create students account with different email-id and while doing it please select the category to student and class as 5 (Since only data for class 5 are stored as of now).
+Please refer to the preview folder for the clear overview of the app.
